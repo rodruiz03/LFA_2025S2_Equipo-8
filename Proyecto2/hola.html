@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Análisis - Operaciones Aritméticas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table th {
+            background-color: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        table tr:hover {
+            background-color: #f5f5f5;
+        }
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .expresion {
+            background: #f0f0f0;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        .valor {
+            background: #e8f5e9;
+            padding: 15px;
+            border-left: 4px solid #4CAF50;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            margin: 10px 0;
+            color: #2e7d32;
+        }
+        .footer {
+            background: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Reporte de Análisis</h1>
+            <p>Analizador de Operaciones Aritméticas - Fase 2</p>
+        </div>
+        
+        <div class="content">
+            <!-- SECCIÓN DE RESULTADO -->
+            <div class="section">
+                <h2>✅ Resultado Final</h2>
+                <div class="expresion">
+                    <strong>Expresión:</strong><br>(3.2+7.8+1.0)
+                </div>
+                <div class="valor">
+                    <strong>Valor:</strong><br>12.0000000000
+                </div>
+            </div>
+            
+            <!-- SECCIÓN DE TOKENS -->
+            <div class="section">
+                <h2>🔤 Tokens Reconocidos</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Lexema</th>
+                            <th>Fila</th>
+                            <th>Columna</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>ETIQUETA_ABIERTA</td><td><Operacion=SUMA></td><td>1</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>2</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>3.2</td><td>2</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>2</td><td>18</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>3</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>7.8</td><td>3</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>3</td><td>18</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>4</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>1</td><td>4</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>4</td><td>16</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>5</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=RESTA></td><td>7</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>8</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>50</td><td>8</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>8</td><td>17</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>9</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>12.75</td><td>9</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>9</td><td>20</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>10</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>0.5</td><td>10</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>10</td><td>18</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>11</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=MULTIPLICACION></td><td>13</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>14</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>6</td><td>14</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>14</td><td>16</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>15</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>2.5</td><td>15</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>15</td><td>18</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>16</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>3</td><td>16</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>16</td><td>16</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>17</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=DIVISION></td><td>19</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>20</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>81</td><td>20</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>20</td><td>17</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>21</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>3</td><td>21</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>21</td><td>16</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>22</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=POTENCIA></td><td>24</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><P></td><td>25</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>3</td><td>25</td><td>9</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></P></td><td>25</td><td>11</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=SUMA></td><td>26</td><td>5</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>27</td><td>9</td></tr>
+<tr><td>NUMERO</td><td>1.5</td><td>27</td><td>18</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>27</td><td>22</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>28</td><td>9</td></tr>
+<tr><td>NUMERO</td><td>2.5</td><td>28</td><td>18</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>28</td><td>22</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>29</td><td>5</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>30</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=RAIZ></td><td>32</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><R></td><td>33</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>5</td><td>33</td><td>9</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></R></td><td>33</td><td>11</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>34</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>243</td><td>34</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>34</td><td>18</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>35</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=INVERSO></td><td>37</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=MULTIPLICACION></td><td>38</td><td>5</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>39</td><td>9</td></tr>
+<tr><td>NUMERO</td><td>4</td><td>39</td><td>18</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>39</td><td>20</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>40</td><td>9</td></tr>
+<tr><td>NUMERO</td><td>5</td><td>40</td><td>18</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>40</td><td>20</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>41</td><td>5</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>42</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=MOD></td><td>44</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>45</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>58</td><td>45</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>45</td><td>17</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>46</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>9</td><td>46</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>46</td><td>16</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>47</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=SUMA></td><td>49</td><td>1</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>50</td><td>5</td></tr>
+<tr><td>NUMERO</td><td>5</td><td>50</td><td>14</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>50</td><td>16</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=POTENCIA></td><td>51</td><td>5</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><P></td><td>52</td><td>9</td></tr>
+<tr><td>NUMERO</td><td>2</td><td>52</td><td>13</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></P></td><td>52</td><td>15</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Operacion=RAIZ></td><td>53</td><td>9</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><R></td><td>54</td><td>13</td></tr>
+<tr><td>NUMERO</td><td>3</td><td>54</td><td>17</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></R></td><td>54</td><td>19</td></tr>
+<tr><td>ETIQUETA_ABIERTA</td><td><Numero></td><td>55</td><td>13</td></tr>
+<tr><td>NUMERO</td><td>125</td><td>55</td><td>22</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Numero></td><td>55</td><td>26</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>56</td><td>9</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>57</td><td>5</td></tr>
+<tr><td>ETIQUETA_CERRADA</td><td></Operacion></td><td>58</td><td>1</td></tr>
+
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- SECCIÓN DE ERRORES -->
+            <div class="section">
+                <h2>⚠️ Errores Léxicos</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Lexema</th>
+                            <th>Tipo</th>
+                            <th>Fila</th>
+                            <th>Columna</th>
+                            <th>Mensaje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan='6' style='text-align:center; color:green;'>✓ No hay errores léxicos</td></tr>
+
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- SECCIÓN DE INFORMACIÓN -->
+            <div class="section">
+                <h2>ℹ️ Información del Análisis</h2>
+                <table>
+                    <tr>
+                        <td><strong>Total de Tokens:</strong></td>
+                        <td>98</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total de Errores:</strong></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estado:</strong></td>
+                        <td><span style="color: green; font-weight: bold;">✓ Análisis completado exitosamente</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Generado por: Analizador de Operaciones Aritméticas v1.0</p>
+            <p>Proyecto LFA 2025 - Fase 2</p>
+        </div>
+    </div>
+</body>
+</html>
